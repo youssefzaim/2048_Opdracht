@@ -3,6 +3,7 @@ package The_Game;
 import java.util.Random;
 
 public class Spel {
+    public String invoer;
     private int score;
     private int highScore;
     private Random random = new Random();
@@ -173,15 +174,17 @@ public class Spel {
         for (int i = 0; i < tegels.length; i++) {
             for (int j = 0; j < tegels[i].length; j++) {
                 if (tegels[i][j] != null) {
-                    System.out.print(tegels[i][j].getWaarde() + " ");
+                    System.out.print(tegels[i][j].getWaarde() + "    ");
                 }
             }
             System.out.println();
         }
     }
 
-    public void spelVerlaten() {
-
+    public boolean spelVerlaten() {
+        if(invoer.equals("q"))
+            return true;
+        return false;
     }
 
     public void opnieuwBeginnen() {
@@ -193,7 +196,16 @@ public class Spel {
     }
 
     public boolean isGewonnen() {
-        return true;
+        boolean gewonnen = true;
+        for (int i = 0; i < tegels.length; i++) {
+            for (int j = 0; j < tegels.length; j++) {
+                if (tegels[i][j].waarde == 2048) {
+                    gewonnen= true;
+                }else
+                    gewonnen= false;
+            }
+
+        }return gewonnen;
     }
 
     public boolean isVerloren() {

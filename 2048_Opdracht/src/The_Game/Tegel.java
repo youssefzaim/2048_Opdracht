@@ -8,10 +8,6 @@ public class Tegel {
     private int X;
     private int Y;
 
-    public int verhoogWaarde() {
-        return 0;
-    }
-
     public Tegel(int waarde) {
         this.waarde = waarde;
     }
