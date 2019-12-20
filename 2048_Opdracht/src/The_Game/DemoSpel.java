@@ -2,7 +2,7 @@ package The_Game;
 
 import java.util.Scanner;
 
-public class Main {
+public class DemoSpel {
     public static void main(String[] args) {
         Spel spel = new Spel();
         Scanner keyboard = new Scanner(System.in);
@@ -44,7 +44,7 @@ public class Main {
                 return;
             else
                 System.out.print("Gebruik w ↑, d →, s ↓, a ← om te swipen of druk q om te stoppen\n");
-        } while (!(spel.isRasterVol()));
+        } while (!(spel.isRasterVol() || spel.isGewonnen()));
         System.out.printf("Score = %d     Highscore = %d\n", spel.getScore(), spel.getHighScore());
     }
 }

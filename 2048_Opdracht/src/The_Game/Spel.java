@@ -89,6 +89,8 @@ public class Spel {
                     if (j - k - 1 >= 0 && tegels[i][j - k].equals(tegels[i][j - k - 1])) {
                         tegels[i][j - k - 1].verdubbel();
                         tegels[i][j - k].setWaarde(0);
+
+
                         setScore(getScore() + tegels[i][j - k - 1].getWaarde());
                         if (getScore() >= getHighScore()) {//werkt nog niet score
                             setHighScore(getScore() + tegels[i][j].getWaarde());
@@ -232,8 +234,12 @@ public class Spel {
         return gewonnen;
     }
 
-    public boolean isVerloren() {
-        return true;
+    public void isVerloren(boolean verloren) {
+        if (isRasterVol()) {
+            verloren = true;
+            System.out.println("Game Over\nGeen zetten meer mogelijk");
+        }
+
     }
 
 }
